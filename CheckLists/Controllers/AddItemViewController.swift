@@ -9,6 +9,8 @@
 import UIKit
 
 class AddItemViewController: UITableViewController {
+    
+    var delegate :AddItemViewControllerDelegate?
 
     @IBOutlet weak var btnDone: UIBarButtonItem!
     @IBOutlet weak var tfNewItem: UITextField!
@@ -22,11 +24,11 @@ class AddItemViewController: UITableViewController {
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true)
+        delegate?.addItemViewControllerDidCancel(self)
     }
     
     @IBAction func done(_ sender: Any) {
-        dismiss(animated: true)
+        delegate?.addItemViewController(self, didFinishAddingItem: CheckListItem(tfNewItem.text!))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,5 +50,10 @@ extension AddItemViewController: UITextFieldDelegate {
         
         return true
     }
+}
+
+protocol AddItemViewControllerDelegate : class {
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController)
+    func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: CheckListItem)
 }
 

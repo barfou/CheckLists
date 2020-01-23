@@ -62,5 +62,22 @@ class CheckListViewController: UITableViewController {
         let indexPath:IndexPath = IndexPath(row:tabItem.count-1, section:0)
         tableView.insertRows(at: [indexPath], with: .left)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navVC = segue.destination as! UINavigationController
+        let destVC = navVC.topViewController as! AddItemViewController
+        destVC.delegate = self
+    }
+}
+
+extension CheckListViewController : AddItemViewControllerDelegate {
+    
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
+        controller.dismiss(animated: true)
+    }
+    
+    func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: CheckListItem) {
+        controller.dismiss(animated: true)
+    }
 }
 
