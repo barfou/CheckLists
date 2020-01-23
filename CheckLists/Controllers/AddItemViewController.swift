@@ -15,10 +15,11 @@ class AddItemViewController: UITableViewController {
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        
+        dismiss(animated: true)
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
     }
 }
 
