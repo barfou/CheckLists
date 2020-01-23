@@ -68,6 +68,12 @@ class CheckListViewController: UITableViewController {
         let destVC = navVC.topViewController as! AddItemViewController
         destVC.delegate = self
     }
+    
+    func addItem(item: CheckListItem) {
+        tabItem.append(item)
+        let indexPath:IndexPath = IndexPath(row:tabItem.count-1, section:0)
+        tableView.insertRows(at: [indexPath], with: .left)
+    }
 }
 
 extension CheckListViewController : AddItemViewControllerDelegate {
@@ -78,6 +84,7 @@ extension CheckListViewController : AddItemViewControllerDelegate {
     
     func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: CheckListItem) {
         controller.dismiss(animated: true)
+        addItem(item: item)
     }
 }
 
