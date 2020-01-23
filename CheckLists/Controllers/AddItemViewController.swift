@@ -10,6 +10,8 @@ import UIKit
 
 class AddItemViewController: UITableViewController {
 
+    @IBOutlet weak var tfNewItem: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,6 +21,7 @@ class AddItemViewController: UITableViewController {
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {
+        print(tfNewItem.text)
         dismiss(animated: true)
     }
 }
