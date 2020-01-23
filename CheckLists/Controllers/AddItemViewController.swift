@@ -21,8 +21,11 @@ class AddItemViewController: UITableViewController {
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {
-        print(tfNewItem.text)
         dismiss(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tfNewItem.becomeFirstResponder()
     }
 }
 
