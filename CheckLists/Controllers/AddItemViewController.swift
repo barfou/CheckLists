@@ -20,7 +20,7 @@ class AddItemViewController: UITableViewController {
         dismiss(animated: true)
     }
     
-    @IBAction func done(_ sender: UIBarButtonItem) {
+    @IBAction func done(_ sender: Any) {
         dismiss(animated: true)
     }
     

@@ -81,6 +81,9 @@
                                                     <rect key="frame" x="20" y="11" width="374" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="done:" destination="HCU-jc-D6k" eventType="editingDidEndOnExit" id="24I-wQ-ZFx"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -107,7 +110,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Qop-wp-hUb">
                             <connections>
-                                <action selector="done:" destination="HCU-jc-D6k" id="yFC-yW-zei"/>
+                                <action selector="done:" destination="HCU-jc-D6k" id="ag5-8g-60H"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
