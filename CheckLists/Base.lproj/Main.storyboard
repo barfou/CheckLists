@@ -22,27 +22,26 @@
                                     <rect key="frame" x="0.0" y="0.0" width="350.5" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOr-6o-DZ0">
-                                            <rect key="frame" x="43" y="11" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="✔︎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcI-i4-jqU">
+                                            <rect key="frame" x="20" y="11" width="15" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="✔︎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcI-i4-jqU">
-                                            <rect key="frame" x="20" y="11" width="15" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOr-6o-DZ0">
+                                            <rect key="frame" x="49" y="11" width="294" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="zcI-i4-jqU" firstAttribute="leading" secondItem="KJR-xK-t63" secondAttribute="leadingMargin" id="0Fk-w9-C7Q"/>
-                                        <constraint firstItem="zOr-6o-DZ0" firstAttribute="leading" secondItem="zcI-i4-jqU" secondAttribute="trailing" constant="8" id="L3L-vO-Ro2"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="lblChecked" destination="zcI-i4-jqU" id="agy-WJ-Ljt"/>
                                     <outlet property="lblItem" destination="zOr-6o-DZ0" id="Irq-zk-KY5"/>
+                                    <segue destination="HCU-jc-D6k" kind="presentation" identifier="editItem" trigger="accessoryAction" id="NIP-se-BBu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -84,7 +83,7 @@
         <!--Add Item-->
         <scene sceneID="8ez-tn-30T">
             <objects>
-                <tableViewController id="HCU-jc-D6k" customClass="AddItemViewController" customModule="CheckLists" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="HCU-jc-D6k" customClass="AddItemViewController" customModule="CheckLists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Hzq-78-Wzt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,7 +144,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tg-PW-naD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1940.5797101449277" y="-765.40178571428567"/>
+            <point key="canvasLocation" x="2093" y="-765"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pBN-X9-LWf">
@@ -163,7 +162,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kw3-pL-rVP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1190" y="-765"/>
+            <point key="canvasLocation" x="1272" y="-765"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NIP-se-BBu"/>
+    </inferredMetricsTieBreakers>
 </document>
