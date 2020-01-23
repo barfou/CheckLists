@@ -83,6 +83,8 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done:" destination="HCU-jc-D6k" eventType="editingDidEndOnExit" id="24I-wQ-ZFx"/>
+                                                        <action selector="textFieldEdtingChanged:" destination="HCU-jc-D6k" eventType="editingChanged" id="biZ-Mh-MPp"/>
+                                                        <outlet property="delegate" destination="HCU-jc-D6k" id="xTy-Ap-k5e"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -99,7 +101,7 @@
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="HCU-jc-D6k" id="JNV-ae-W7O"/>
-                            <outlet property="delegate" destination="HCU-jc-D6k" id="sa9-bH-GQ9"/>
+                            <outlet property="delegate" destination="LlE-Ap-wQU" id="GV3-67-htX"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Item" id="Tro-jM-TCe">
@@ -115,6 +117,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnDone" destination="Qop-wp-hUb" id="yAP-OE-9og"/>
                         <outlet property="tfNewItem" destination="LlE-Ap-wQU" id="Px2-qc-uah"/>
                     </connections>
                 </tableViewController>
