@@ -41,7 +41,7 @@
                                 <connections>
                                     <outlet property="lblChecked" destination="zcI-i4-jqU" id="agy-WJ-Ljt"/>
                                     <outlet property="lblItem" destination="zOr-6o-DZ0" id="Irq-zk-KY5"/>
-                                    <segue destination="a8e-HP-UGI" kind="presentation" trigger="accessoryAction" id="VKc-tf-hCe"/>
+                                    <segue destination="a8e-HP-UGI" kind="presentation" identifier="editItem" trigger="accessoryAction" id="VKc-tf-hCe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -166,6 +166,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HrO-hj-WA0"/>
+        <segue reference="VKc-tf-hCe"/>
     </inferredMetricsTieBreakers>
 </document>
