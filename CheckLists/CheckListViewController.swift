@@ -37,14 +37,6 @@ class CheckListViewController: UITableViewController {
         return cell
     }
     
-    func configureText(for cell: CheckListItemCell, withItem item: CheckListItem)  {
-        cell.lblItem?.text = item.text
-    }
-    
-    func configureCheckmark(for cell: CheckListItemCell, withItem item: CheckListItem) {
-        cell.lblChecked.isHidden = item.checked
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath) as! CheckListItemCell
         let item = tabItem[indexPath.row]
@@ -58,16 +50,27 @@ class CheckListViewController: UITableViewController {
         tableView.deleteRows(at: [indexPath], with: .right)
     }
     
-    @IBAction func addDummyoDo(_ sender: UIBarButtonItem) {
+    func configureText(for cell: CheckListItemCell, withItem item: CheckListItem)  {
+        cell.lblItem?.text = item.text
+    }
+    
+    func configureCheckmark(for cell: CheckListItemCell, withItem item: CheckListItem) {
+        cell.lblChecked.isHidden = !item.checked
+    }
+    
+    /*@IBAction func addDummyoDo(_ sender: UIBarButtonItem) {
         tabItem.append(CheckListItem("Dummy"))
         let indexPath:IndexPath = IndexPath(row:tabItem.count-1, section:0)
         tableView.insertRows(at: [indexPath], with: .left)
-    }
+    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navVC = segue.destination as! UINavigationController
-        let destVC = navVC.topViewController as! AddItemViewController
-        destVC.delegate = self
+      let navVC = segue.destination as! UINavigationController
+      let destVC = navVC.topViewController as! AddItemViewController
+      destVC.delegate = self
+      if segue.identifier == "editItem" {
+        destVC.itemToEdit = tabItem[tableView.indexPath(for: (sender as! CheckListItemCell))!.row]
+      }
     }
     
     func addItem(item: CheckListItem) {

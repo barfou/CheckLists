@@ -7,8 +7,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5CA2ABC0-EBDC-4F18-B420-662B13A6BA53"
-            shouldBeEnabled = "No"
+            uuid = "C8CAC2B5-DC70-466A-A137-146128C92B49"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CheckLists/CheckListViewController.swift"

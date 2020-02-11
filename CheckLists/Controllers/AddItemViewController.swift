@@ -11,16 +11,21 @@ import UIKit
 class AddItemViewController: UITableViewController {
     
     var delegate :AddItemViewControllerDelegate?
+    var itemToEdit: CheckListItem?
 
     @IBOutlet weak var btnDone: UIBarButtonItem!
     @IBOutlet weak var tfNewItem: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let itemToEdit = itemToEdit {
+            tfNewItem.text = itemToEdit.text
+        }
     }
     
     @IBAction func textFieldEdtingChanged(_ sender: Any) {
-        //btnDone.isEnabled = !tfNewItem.text!.isEmpty
+        btnDone.isEnabled = !tfNewItem.text!.isEmpty
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -39,7 +44,7 @@ class AddItemViewController: UITableViewController {
 }
 
 //MARK: - Text field delegate
-extension AddItemViewController: UITextFieldDelegate {
+/*extension AddItemViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let oldString = textField.text!
@@ -50,7 +55,7 @@ extension AddItemViewController: UITextFieldDelegate {
         
         return true
     }
-}
+}*/
 
 protocol AddItemViewControllerDelegate : class {
     func addItemViewControllerDidCancel(_ controller: AddItemViewController)
